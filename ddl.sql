@@ -1890,6 +1890,10 @@ create or replace Procedure TCABSTeamDeleteTeam(in SelectedTeamName varchar(255)
 		if ((select COUNT(*) from TeamProjects WHERE @ValuesTeamID = TeamID) >= 1) then
 			SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Entered Team already having a team project cannot be deleted.";
 		end if;
+		
+		if ((select COUNT(*) from TeamMember WHERE @ValuesTeamID = TeamID) >= 1) then
+			SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = "Entered Team already having a team member cannot be deleted.";
+		end if;
 
 		if (select count(*) from Team where TeamID = @ValuesTeamID) >= 0 then
 			DELETE FROM Team
