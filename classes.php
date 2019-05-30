@@ -678,6 +678,19 @@
 			}
 			$stmt->close();
 		}
+		
+		public function deleteTeamMember($sEmail, $tName, $supEmail, $unitCode, $term, $year) {
+		
+			$stmt = $GLOBALS['conn']->prepare("CALL TCABSTEAMMEMBERDeleteTeamMember(?, ?, ?, ?, ?, ?)");
+			$stmt->bind_param("ssssss", $sEmail, $tName, $supEmail, $unitCode, $term, $year);
+			
+			try {
+				$stmt->execute();
+			} catch(mysqli_sql_exception $e) {
+				throw $e;
+			}
+			$stmt->close();
+		}
 	}
 
 	class Team {
