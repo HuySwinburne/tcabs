@@ -2007,7 +2007,7 @@ create or replace Procedure SPAINSTENCEDeleteInstence(in EnteredName varchar(255
 		end if;
 	END //
  DELIMITER;
-
+/*
     DELIMITER //
 create or replace Procedure TCABSTEAMMEMBERDeleteTeamMember(in StudentEmail varchar(255),in Teamname varchar(255), in SupervisorEmail varchar(255), in SelectedUnitCode varchar(255), in SelectedOfferingterm varchar(255), in SelectedOfferingyear varchar(255))
 	BEGIN
@@ -2057,8 +2057,8 @@ create or replace Procedure TCABSTEAMMEMBERDeleteTeamMember(in StudentEmail varc
 		end if;
 	END //
  DELIMITER;
-
- /*
+*/
+ 
      DELIMITER //
 create or replace Procedure TCABSTEAMMEMBERDeleteTeamMember(in StudentEmail varchar(255),in Teamname varchar(255), in SupervisorEmail varchar(255), in SelectedUnitCode varchar(255), in SelectedOfferingterm varchar(255), in SelectedOfferingyear varchar(255))
 	BEGIN
@@ -2104,7 +2104,7 @@ create or replace Procedure TCABSTEAMMEMBERDeleteTeamMember(in StudentEmail varc
 		end if;
 	END //
  DELIMITER;
- */
+ 
 
  DELIMITER //
 create or replace Procedure TCABSMEETINGATTENDIEESDeleteAttendiee(in StudentEmail Varchar(255),in EnteredStartTime datetime, in Teamname varchar(255), in SupervisorEmail varchar(255), in SelectedUnitCode varchar(255), in SelectedOfferingterm varchar(255), in SelectedOfferingyear varchar(255))
