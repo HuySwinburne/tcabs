@@ -1027,12 +1027,10 @@
 		}
 	 */
 
-		// stored procedure to be completed
-		/*
-		public function deleteTeamProject($tname, $supemail, $unitcode, $term, $year, $nSupEmail, $nTeamName, $projManager) {
+		public function deleteTeamProject($projName, $tName, $cUserName, $unitCode, $term, $year) {
 		
-			$stmt = $GLOBALS['conn']->prepare("CALL TCABSUpdateFullTeam(?, ?, ?, ?, ?, ?, ?, ?)");
-			$stmt->bind_param("ssssssss", $tname, $supemail, $unitcode, $term, $year, $nSupEmail, $nTeamName, $projManager);
+			$stmt = $GLOBALS['conn']->prepare("CALL TCABSTEAMPROJECTDeleteTeamProject(?, ?, ?, ?, ?, ?)");
+			$stmt->bind_param("ssssss", $projName, $tName, $cUserName, $unitCode, $term, $year);
 			
 			try {
 				$stmt->execute();
@@ -1041,7 +1039,6 @@
 			}
 			$stmt->close();
 		}
-	 */
 	}
 
 	class ProjRole {
