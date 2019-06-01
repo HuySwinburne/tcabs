@@ -912,6 +912,19 @@
 			}
 			return $teams;
 		}
+		
+		public function deleteProject($projName, $projDesc) {
+		
+			$stmt = $GLOBALS['conn']->prepare("CALL TCABSPROJECTDeleteProject(?, ?)");
+			$stmt->bind_param("ss", $projName, $projDesc);
+			
+			try {
+				$stmt->execute();
+			} catch(mysqli_sql_exception $e) {
+				throw $e;
+			}
+			$stmt->close();
+		}
 	}
 	
 	class TeamProject {
