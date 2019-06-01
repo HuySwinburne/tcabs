@@ -1323,9 +1323,19 @@
 			}
 			$stmt->close();
 		}
-
-		// to do delete
-		// because no stored procedures
+			
+		public function deleteTask($taskID, $projName, $teamName, $supEmail, $uCode, $term, $year) {
+		
+			$stmt = $GLOBALS['conn']->prepare("CALL TCABSTASKDeleteTask(?, ?, ?, ?, ?, ?, ?)");
+			$stmt->bind_param("sssssss", $taskID, $projName, $teamName, $supEmail, $uCode, $term, $year);
+			
+			try {
+				$stmt->execute();
+			} catch(mysqli_sql_exception $e) {
+				throw $e;
+			}
+			$stmt->close();
+		}
 	}
 
 	class Meeting {
