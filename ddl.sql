@@ -2213,6 +2213,7 @@ create or replace Procedure TCABSOFFERINGSTAFFDeleteOfferingStaff(in UserEmail v
 	END //
  DELIMITER;
 
+ /*
   DELIMITER //
 create or replace PROCEDURE TCABSUNITOFFERINGDeleteOffering( in OfferedUnitID Varchar(255), in Offeredterm varchar(255), in Offeredyear varchar(255))
 	BEGIN
@@ -2245,8 +2246,8 @@ create or replace PROCEDURE TCABSUNITOFFERINGDeleteOffering( in OfferedUnitID Va
 		end if;
 	END //
 DELIMITER;
-
-/*
+*/
+								  
   DELIMITER //
 create or replace PROCEDURE TCABSUNITOFFERINGDeleteOffering( in OfferedUnitID Varchar(255), in Offeredterm varchar(255), in Offeredyear varchar(255))
 	BEGIN
@@ -2283,7 +2284,6 @@ create or replace PROCEDURE TCABSUNITOFFERINGDeleteOffering( in OfferedUnitID Va
 		end if;
 	END //
 DELIMITER;
-*/
 
   DELIMITER //
 create or replace Procedure TCABSPERMISSIONDeletePermission(in RoleName varchar(255), in Functionality varchar(255))
